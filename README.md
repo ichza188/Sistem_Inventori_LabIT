@@ -8,7 +8,7 @@ Proyek ini adalah implementasi **Three-Tier Web Application** di Google Cloud Pl
 ## 👥 Anggota Kelompok
 
 | Nama Lengkap | NIM |
-| :--- | :--- | :--- |
+| :--- | :--- |
 | **Martua** | [ISI_NIM_DISINI] | 
 | **Christoper** | [ISI_NIM_DISINI] |
 | **Rachel** | [ISI_NIM_DISINI] |
