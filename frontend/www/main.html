@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sistem Inventaris Lab</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistem Inventaris Lab IT</h1>
+        
+        <div class="content">
+            <div class="input-group">
+                <input type="text" id="title" placeholder="Nama Barang (Cth: Monitor LG)" required>
+                
+                <input type="text" id="description" placeholder="Lokasi / Kondisi (Cth: Rak A / Baik)">
+                
+                <button id="add-btn" onclick="createNewTask()">
+                    <span class="material-icons">add_circle</span> Tambah Barang
+                </button>
+            </div>
+
+            <div class="list-header">
+                <h3>Daftar Aset Saat Ini</h3>
+            </div>
+            
+            <ul id="todo-list">
+                </ul>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Panggil fungsi getTasks dari main.js saat web dibuka
+        window.onload = function() {
+            if(typeof getTasks === 'function') {
+                getTasks();
+            }
+        };
+    </script>
+</body>
+</html>
