@@ -1,0 +1,149 @@
+/* Reset & Font */
+body {
+    background-color: #f4f6f8;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+/* Form Input Area */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    background: #eef2f5;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+}
+
+#title { flex: 2; } /* Input Nama lebih lebar */
+#description { flex: 1; } /* Input Lokasi lebih kecil */
+
+button#add-btn {
+    background-color: #28a745; /* Hijau Sukses */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+}
+
+button#add-btn:hover {
+    background-color: #218838;
+}
+
+/* List Header */
+.list-header h3 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    color: #555;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Inventory List */
+ul#todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.inventory-item {
+    margin-bottom: 10px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: white;
+    transition: 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+}
+
+.item-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Status Badges */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.badge-good {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.badge-broken {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Delete Button */
+.btn-delete {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.btn-delete:hover {
+    color: #dc3545; /* Merah */
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+    }
+    button#add-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
