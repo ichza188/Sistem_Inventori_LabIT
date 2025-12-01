@@ -167,7 +167,7 @@ Pastikan tools berikut sudah terinstall:
 
 ---
 
-### 📥 **Step 1: Clone Repository**
+### 📥 Clone Repository**
 
 ```bash
 git clone https://github.com/ichza188/Sistem_Inventori_LabIT.git
