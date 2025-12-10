@@ -144,3 +144,27 @@ function toggleStatus(id, title, currentStatus) {
   // Balik statusnya (True jadi False, False jadi True)
   updateTodo(id, title, !currentStatus);
 }
+
+// --- FITUR TAMBAHAN: PENCARIAN BARANG (Client-Side) ---
+function searchBarang() {
+    // Ambil teks yang diketik user
+    let input = document.getElementById('search-input');
+    let filter = input.value.toUpperCase();
+    
+    // Ambil semua list barang
+    let ul = document.getElementById("todo-list");
+    let li = ul.getElementsByTagName('li');
+
+    // Loop semua barang, sembunyikan yang tidak cocok
+    for (let i = 0; i < li.length; i++) {
+        let span = li[i].getElementsByClassName("item-name")[0];
+        if (span) {
+            let txtValue = span.textContent || span.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = ""; // Munculkan
+            } else {
+                li[i].style.display = "none"; // Sembunyikan
+            }
+        }
+    }
+}
