@@ -1,6 +1,6 @@
-/* Reset & Font */
+/* Reset & Base */
 body {
-    background-color: #f4f6f8;
+    background-color: #f0f2f5;
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 20px;
@@ -13,7 +13,7 @@ body {
     background: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 h1 {
@@ -23,38 +23,51 @@ h1 {
     font-weight: 900;
 }
 
-/* Form Input Area */
+/* Input Card */
+.input-card {
+    background: #eef2f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
 .input-group {
     display: flex;
     gap: 10px;
-    margin-bottom: 30px;
-    background: #eef2f5;
-    padding: 15px;
-    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-input {
-    padding: 12px;
+input[type="text"] {
+    padding: 12px 15px;
     border: 1px solid #ddd;
-    border-radius: 6px;
+    border-radius: 8px;
     outline: none;
     font-size: 14px;
+    transition: 0.3s;
 }
 
-#title { flex: 2; } /* Input Nama lebih lebar */
-#description { flex: 1; } /* Input Lokasi lebih kecil */
+input[type="text"]:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.2);
+}
+
+#title { flex: 2; }
+#description { flex: 1; }
 
 button#add-btn {
-    background-color: #28a745; /* Hijau Sukses */
+    width: 100%;
+    background-color: #28a745;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 16px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 8px;
     transition: 0.3s;
 }
 
@@ -62,31 +75,63 @@ button#add-btn:hover {
     background-color: #218838;
 }
 
-/* List Header */
-.list-header h3 {
+/* Search Bar (Iterasi 2) */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.list-header h3 {
+    margin: 0;
     color: #555;
-    font-size: 16px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    max-width: 300px;
+}
+
+.search-box input {
+    width: 100%;
+    padding-left: 35px; /* Space for icon */
+    box-sizing: border-box;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 18px;
 }
 
 /* Inventory List */
 ul#todo-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .inventory-item {
     margin-bottom: 10px;
+    animation: fadeIn 0.3s ease;
 }
 
 .card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 15px 20px;
     border: 1px solid #eee;
     border-radius: 8px;
     background: white;
@@ -94,16 +139,16 @@ ul#todo-list {
 }
 
 .card:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     transform: translateY(-2px);
 }
 
 .item-name {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
-/* Status Badges */
+/* Badges */
 .badge {
     padding: 6px 12px;
     border-radius: 20px;
@@ -112,6 +157,7 @@ ul#todo-list {
     border: none;
     cursor: pointer;
     margin-right: 10px;
+    text-transform: uppercase;
 }
 
 .badge-good {
@@ -124,26 +170,109 @@ ul#todo-list {
     color: #721c24;
 }
 
-/* Delete Button */
 .btn-delete {
     background: none;
     border: none;
     color: #ccc;
     cursor: pointer;
-    padding: 5px;
+    vertical-align: middle;
 }
 
 .btn-delete:hover {
-    color: #dc3545; /* Merah */
+    color: #dc3545;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Mobile Responsive */
 @media (max-width: 600px) {
-    .input-group {
-        flex-direction: column;
-    }
-    button#add-btn {
-        width: 100%;
-        justify-content: center;
-    }
+    .input-group { flex-direction: column; }
+    .list-header { flex-direction: column; align-items: flex-start; }
+    .search-box { max-width: 100%; width: 100%; }
 }
+
+/* ========================================= */
+/* MODERN LOGIN SCREEN STYLES           */
+/* ========================================= */
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Container Login Full Screen */
+#login-screen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    /* Background Gradient Biru Elegan */
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center; z-index: 9999;
+}
+
+/* Dekorasi Lingkaran Melayang */
+.bg-circle {
+    position: absolute; border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    animation: float 6s infinite ease-in-out;
+    pointer-events: none;
+}
+.c1 { width: 300px; height: 300px; top: -50px; left: -50px; }
+.c2 { width: 200px; height: 200px; bottom: 50px; right: -50px; animation-delay: 2s; }
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Kartu Login Glassmorphism */
+.login-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 50px 40px; 
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    text-align: center; 
+    max-width: 400px; width: 85%;
+    position: relative; z-index: 2;
+    animation: fadeIn 0.8s ease-out;
+    border: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.login-card h1 {
+    color: #1e3c72; font-weight: 900; margin-bottom: 5px; font-size: 26px; margin-top: 0;
+}
+
+.login-card p {
+    color: #555; font-size: 14px; margin-bottom: 30px; line-height: 1.6;
+}
+
+/* Tombol Google */
+.btn-google {
+    background: white; color: #555; 
+    padding: 12px 24px; border: 1px solid #ddd;
+    border-radius: 50px;
+    font-size: 15px; cursor: pointer;
+    font-weight: bold; width: 100%; 
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.btn-google:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-color: #ccc;
+}
+
+.btn-google img { width: 20px; }
+
+.footer-text { margin-top: 25px; font-size: 11px; color: #888; letter-spacing: 1px; text-transform: uppercase; }
+
+/* Menyembunyikan Aplikasi Utama Sebelum Login */
+#app-screen { display: none; }
